@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
 @SpringBootApplication
 public class HaseoShopApplication {
 
@@ -14,9 +14,4 @@ public class HaseoShopApplication {
 		SpringApplication.run(HaseoShopApplication.class, args);
 	}
 	
-	@GetMapping(value = "/")
-	public String helloWord() {
-		return "Hello";
-	}
-
 }
