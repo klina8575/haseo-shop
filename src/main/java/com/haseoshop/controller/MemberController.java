@@ -1,5 +1,7 @@
 package com.haseoshop.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -49,8 +51,12 @@ public class MemberController {
     }
     
     @GetMapping(value = "/login")
-    public String loginMember(){
-        return "/member/memberLoginForm";
+    public String loginMember(HttpServletResponse response){
+    	/* 쿠키 테스트
+    	Cookie idCookie = new Cookie("userId", "person1");
+        response.addCookie(idCookie);
+        */
+    	return "/member/memberLoginForm";
     }
 
     @GetMapping(value = "/login/error")
