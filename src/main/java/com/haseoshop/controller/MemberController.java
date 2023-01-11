@@ -1,7 +1,9 @@
 package com.haseoshop.controller;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
     private final MemberService memberService;
     private final PasswordEncoder passwordEncoder;
+    private final SessionManager sessionManager;
 
     
     @GetMapping(value = "/new")
@@ -51,11 +54,18 @@ public class MemberController {
     }
     
     @GetMapping(value = "/login")
-    public String loginMember(HttpServletResponse response){
-    	/* 쿠키 테스트
-    	Cookie idCookie = new Cookie("userId", "person1");
+    public String loginMember(HttpServletResponse response, HttpSession session){
+    	/*//쿠키, 세션 테스트
+    	Cookie idCookie = new Cookie("userCookieId", "cookiePerson1");
         response.addCookie(idCookie);
-        */
+        
+    	session.setAttribute("userSessionId", "sessionPerson1");
+    	String user = (String) session.getAttribute("userSessionId");
+    	System.out.println(user);
+    	
+    	sessionManager.createSession("sessionPerson2", response);
+    	*/
+    	 
     	return "/member/memberLoginForm";
     }
 
