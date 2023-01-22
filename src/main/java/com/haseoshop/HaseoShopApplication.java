@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HaseoShopApplication {
 
 	public static void main(String[] args) {
-//		System.getProperty("server.port");
 		SpringApplication.run(HaseoShopApplication.class, args);
 	}
 	

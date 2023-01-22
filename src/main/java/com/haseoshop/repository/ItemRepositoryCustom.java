@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 //import com.haseoshop.dto.MainItemDto;
 
 public interface ItemRepositoryCustom {
-//	Page<Item> getAdminItemPage(ItemSearchDto itemSearchDto, Pageable pageable);
+	Page<Item> getAdminItemPage(ItemSearchDto itemSearchDto, Pageable pageable);
 	
     Page<MainItemDto> getMainItemPage(ItemSearchDto itemSearchDto, Pageable pageable);
 }

@@ -63,7 +63,7 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom {
         return null;
     }
     
-    /*
+    
     @Override
     public Page<Item> getAdminItemPage(ItemSearchDto itemSearchDto, Pageable pageable) {
 
@@ -85,7 +85,7 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom {
 
         return new PageImpl<>(content, pageable, total);
     }
-    */
+    
     
     private BooleanExpression itemNmLike(String searchQuery){
         return StringUtils.isEmpty(searchQuery) ? null : QItem.item.itemNm.like("%" + searchQuery + "%");
