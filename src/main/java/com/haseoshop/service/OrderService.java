@@ -97,6 +97,13 @@ public class OrderService {
                 .orElseThrow(EntityNotFoundException::new);
         order.cancelOrder();
     }
+    
+    public void deleteOrder(Long orderId){
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(EntityNotFoundException::new);
+        orderRepository.delete(order);
+    }
+    
 
     /*
     public Long orders(List<OrderDto> orderDtoList, String email){

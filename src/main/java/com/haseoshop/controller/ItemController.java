@@ -1,5 +1,6 @@
 package com.haseoshop.controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,15 +10,20 @@ import javax.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.haseoshop.dto.ItemDto;
 import com.haseoshop.dto.ItemFormDto;
 import com.haseoshop.service.ItemService;
 import com.haseoshop.dto.ItemSearchDto;
@@ -118,4 +124,5 @@ public class ItemController {
         model.addAttribute("item", itemFormDto);
         return "item/itemDtl";
     }
+    
 }

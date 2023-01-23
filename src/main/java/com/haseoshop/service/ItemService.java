@@ -3,14 +3,18 @@ package com.haseoshop.service;
 import com.haseoshop.dto.ItemFormDto;
 import com.haseoshop.entity.Item;
 import com.haseoshop.entity.ItemImg;
+import com.haseoshop.entity.Member;
+import com.haseoshop.entity.Order;
 import com.haseoshop.repository.ItemImgRepository;
 import com.haseoshop.repository.ItemRepository;
 import com.haseoshop.repository.ItemRepositoryCustom;
+import com.haseoshop.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 
@@ -35,6 +39,8 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     private final ItemImgService itemImgService;
+    
+    private final MemberRepository memberRepository;
 
     private final ItemImgRepository itemImgRepository;
 
