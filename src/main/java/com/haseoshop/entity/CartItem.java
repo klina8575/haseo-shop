@@ -9,9 +9,9 @@ import lombok.Setter;
 @Getter 
 @Setter
 @Table(name="cart_item")
-public class CartItem {
+public class CartItem extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @Column(name = "cart_item_id")
     private Long id;
 
@@ -22,6 +22,22 @@ public class CartItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
-    
-    private int count; //같은 상품을 장바구니에 몇개 담을지 저장
+
+    private int count;
+
+    public static CartItem createCartItem(Cart cart, Item item, int count) {
+        CartItem cartItem = new CartItem();
+        cartItem.setCart(cart);
+        cartItem.setItem(item);
+        cartItem.setCount(count);
+        return cartItem;
+    }
+
+    public void addCount(int count){
+        this.count += count;
+    }
+
+    public void updateCount(int count){
+        this.count = count;
+    }
 }

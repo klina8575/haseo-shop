@@ -105,7 +105,7 @@ public class OrderService {
     }
     
 
-    /*
+    
     public Long orders(List<OrderDto> orderDtoList, String email){
 
         Member member = memberRepository.findByEmail(email);
@@ -124,6 +124,6 @@ public class OrderService {
 
         return order.getId();
     }
-    */
+    
 
 }
